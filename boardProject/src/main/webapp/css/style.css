@@ -21,3 +21,58 @@ a {
   color: inherit;
   cursor:pointer;
 }
+
+/* 공통 */
+
+.bt_wrap {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0;
+}
+
+.bt_wrap a {
+  display: inline-block;
+  min-width: 80px;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.bt_wrap a:hover {
+  text-decoration: underline;
+}
+
+.bt_wrap a.on {
+  background: #000;
+  color: #fff;
+}
+
+/* list.html */
+
+.wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+.board_list {
+  width: 100%;
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
+  font-size: 1.5rem;
+}
+.board_list caption {
+  padding: 30px;
+}
+.board_list th,
+.board_list td {
+  /* border-spacing: 0; */
+  border-bottom: 1px solid #444444;
+  padding: 10px;
+  text-align: center;
+}
+
+.board_list td.title > a:hover {
+  text-decoration: underline;
+}

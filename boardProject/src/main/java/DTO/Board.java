@@ -8,6 +8,8 @@ public class Board {
 	private int views;
 	private String content;
 	private String img;
+	private int likey;
+	
 	public int getBoard_no() {
 		return board_no;
 	}
@@ -51,5 +53,10 @@ public class Board {
 		this.img = img;
 	}
 	
-	
+	public int getLikey() {
+		return likey;
+	}
+	public void setLikey(int likey) {
+		this.likey = likey;
+	}
 }
