@@ -26,7 +26,9 @@
 				</tr>
 			</thead>
 			<tbody>
+			<c:forEach var="board" items="${boardList}" varStatus="status">
 			
+			</c:forEach>
 			</tbody>
 		</table>
 	</div>
