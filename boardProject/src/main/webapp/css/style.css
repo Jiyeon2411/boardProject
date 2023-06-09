@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* 초기화 태그 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor:pointer;
+}
