@@ -10,6 +10,10 @@
 <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
+	<c:if test="${boardList == null}">
+	<!-- 페이지이동을 하지만 주소는 바뀌지 않는다. -->
+		<jsp:forward page="list" />
+	</c:if>
 	<div class="wrap">
 		<table class="board_list">
 			<caption>
@@ -32,7 +36,6 @@
             		<td>${board.user_id}</td>
             		<td>${board.reg_date}</td>
            			<td>${board.views}</td>
-           			<td>${board.likey}</td>
 				</tr>
 			</c:forEach>
 			</tbody>

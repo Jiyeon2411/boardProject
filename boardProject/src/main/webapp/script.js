@@ -24,7 +24,7 @@ function chkDelete(board_no) {
 	
 	if(result) {
 		const url = location.origin;
-		location.href = url + "/board/delete?board_no=" + board_no;
+		location.href = url + "/boardProject/delete?board_no=" + board_no;
 	} else {
 		false;
 	}

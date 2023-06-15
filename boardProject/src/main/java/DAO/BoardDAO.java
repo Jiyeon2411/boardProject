@@ -16,6 +16,7 @@ public class BoardDAO {
 	public Connection open() {
 		Connection conn = null;
 		try {
+			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(JDBC_URL, "test", "test1234");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -27,7 +28,7 @@ public class BoardDAO {
 	
 	public ArrayList<Board> getList() throws Exception {
 		Connection conn = open();
-		Board b = new Board();
+		
 		ArrayList<Board> boardList = new ArrayList<>();
 		
 		String sql = "SELECT BOARD_NO, TITLE, USER_ID, TO_CHAR (REG_DATE, 'YYYY.MM.DD') REG_DATE, VIEWS FROM BOARD2";
@@ -36,6 +37,7 @@ public class BoardDAO {
 		
 		try (conn; pstmt; rs) {
 			while(rs.next()) {
+				Board b = new Board();
 				b.setBoard_no(rs.getInt("BOARD_NO"));
 				b.setTitle(rs.getString("TITLE"));
 				b.setUser_id(rs.getString("USER_ID"));
@@ -145,7 +147,7 @@ public class BoardDAO {
 	
 	public void deleteBoard(int board_no) throws Exception {
 		Connection conn = open();
-		String sql = "DELETE FROM BOARD WHERE BOARD_NO = ?";
+		String sql = "DELETE FROM BOARD2 WHERE BOARD_NO = ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
 		try(conn; pstmt) {
